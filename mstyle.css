@@ -14,7 +14,7 @@
 
 body {
     font-family: Public Sans;
-
+    scroll-behavior: smooth;
 }
 
 .cursorItem {
@@ -58,6 +58,12 @@ li{
 header{
     width: auto;
     padding: var(--side--padding);
+    transition: all 0.6s ease-out;
+    opacity: 0;
+}
+
+header.visible{
+    opacity: 1;
 }
 
 .logo{
@@ -244,29 +250,15 @@ a{
 
 .text{
     position: relative;
-    /**animation: fadeInUp 1s;**/
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.3s ease-out;
     margin: 40px 0;
     font-size: 2rem;
     color: #333;
     padding: 20px;
     border-radius: 10px;
-    z-index: 1;
 }
-
-.text.visible{
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/**.text.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.text.hide {
-    opacity: 0;
-    transform: scale(0.5);
-}**/
 
 .text p{
     color: black;
@@ -281,7 +273,6 @@ a{
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 2;
     margin: 0%;
 }
 
@@ -294,15 +285,6 @@ a{
 
 .scroll-image.visible{
     opacity: 1;
-}
-
-@keyframes reveal {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
 }
 
 @keyframes fadeInUp {
