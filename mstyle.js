@@ -75,7 +75,7 @@ window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   const imageBox = document.getElementById('scrollImage');
 
-  if (scrollY > 1600) {
+  if (scrollY > 1500) {
     imageBox.classList.add('visible');
   } else {
     imageBox.classList.remove('visible');
@@ -101,3 +101,48 @@ window.addEventListener('scroll', () => {
       }
     }
   );
+
+  const images = document.querySelectorAll('#imageContainer img');
+    const totalFrames = images.length;
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+      // 스크롤 비율 구하기 (0 ~ 1)
+      const scrollFraction = scrollTop / maxScroll;
+      
+      // 이미지 인덱스 구하기
+      const frameIndex = Math.min(
+        totalFrames - 1,
+        Math.floor(scrollFraction * totalFrames)
+      );
+
+      // 이미지 표시 업데이트
+      images.forEach((img, index) => {
+        img.classList.toggle('active', index === frameIndex);
+      });
+    });
+
+    const container = document.getElementById('imageContainer');
+    const wrapper = document.getElementById('trigger');
+    const images2 = container.querySelectorAll('img');
+    const totalFrames2 = images.length;
+
+    window.addEventListener('scroll', () => {
+      const wrapperTop = wrapper.offsetTop;
+      const wrapperHeight = wrapper.offsetHeight;
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      // 이미지 섹션 안에 있을 때만 동작
+      if (scrollY >= wrapperTop && scrollY <= wrapperTop + wrapperHeight - viewportHeight) {
+        const scrollWithin = scrollY - wrapperTop;
+        const progress = scrollWithin / (wrapperHeight - viewportHeight);
+        const frameIndex = Math.min(totalFrames - 1, Math.floor(progress * totalFrames2));
+
+        images2.forEach((img, index) => {
+          img.classList.toggle('active', index === frameIndex);
+        });
+      }
+    });

@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.uoqmunthenkhung-regular {
+    font-family: "UoqMunThenKhung", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 :root{
     --white-color : #fff;
     --black--color : #140a00;
@@ -15,6 +21,7 @@
 body {
     font-family: Public Sans;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .cursorItem {
@@ -313,6 +320,7 @@ a{
 }
 
 .anton {
+    font-family: UoqMunThenKhung;
     position: relative;
     color: white;
     padding-top: 30px;
@@ -349,13 +357,6 @@ a{
     transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s
 }
 
-#inc02{
-    display: flex;
-    background-color: black;
-    width: 100%;
-    height: 800px;
-}
-
 .mical{
     color: white;
     font-size: 48px;
@@ -364,3 +365,63 @@ a{
     padding-left: 20px;
     overflow: hidden;
 }
+
+.mical2{
+    color: white;
+    font-size: 28px;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.image-section-wrapper {
+    height: 4000px; /* 이미지 변경 스크롤 구간 */
+    padding-top: 40px;
+    position: relative;
+    background: #000;
+    text-align: center;
+}
+
+.background-text{
+     position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff1a; /* 희미한 텍스트 */
+      font-size: 8vw;
+      font-weight: bold;
+      user-select: none;
+      pointer-events: none;
+      text-align: center;
+}
+
+.image-section {
+    position: sticky;
+    top: 0;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section img {
+    margin-top: 320px;
+    position: absolute;
+    width: 50vw;
+    height: 80vh;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+    z-index: 2;
+}
+
+.image-section img.active {
+    opacity: 1;
+}
+
