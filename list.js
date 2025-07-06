@@ -41,3 +41,26 @@ if (boardsStr === null) {
     localStorage.setItem("boards", listStr);
     boardsStr = listStr;
 }
+
+const boardsObj = JSON.parse(boardsStr);
+
+const template = (index, objValue) => {
+  return `
+  <div>
+    <div>${index + 1}</div>
+    <div><a href = "./view.html?index=${objValue.index}">${objValue.subject}</a></div>
+    <div>${objValue.writer}</div>
+    <div>${objValue.date}</div>
+    <div>${objValue.views}</div>
+  </div>
+  `;
+};
+
+const dbody = document.getElementById('tbody')
+
+for(let i = 0; i < boardsObj.length; i++) {
+  dbody.innerHTML += (template(i, boardsObj[i]));
+  boardsObj[i].refresh = false;
+  const refreshStr = JSON.stringify(boardsObj);
+  localStorage.setItem("boards", refreshStr);
+}

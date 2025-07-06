@@ -1,3 +1,9 @@
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.querySelector('header').classList.add('visible');
+  }, 1000);
+});
+
 window.onload = () => {
   let x = 0,
       y = 0;
@@ -43,7 +49,8 @@ class Board {
         this.Writer = writerStr;
         this.Content = contentStr;
         this.date = recordDate();
-        this.views = 0;
+        this.views = -1;
+        this.fefresh = false;
     }
 
     set Subject(value) {
