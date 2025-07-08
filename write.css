@@ -244,14 +244,98 @@ a{
 }
 
 .writeF{
-    height: 500px;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-top: 200px;
+}
+
+.writeF h2{
+    color: white;
+    font-size: 48px;
+}
+
+#writeForm{
+    color: white;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.writeF div input{
+    outline: none;
+    width: 50%;
+    height: 80px;
+    background-color: black;
+    border: 0;
+    border-bottom: white solid 1px;
+    color: white;
+    font-size: 24px;
+}
+
+.writeF div input::placeholder {
+    color: white;
+}
+
+.writeF div input:focus{
+    outline: 2px solid #d5ca00;
+    border-bottom: #d5ca00 solid 2px;
+}
+
+.writeF div textarea{
+    width: 50%;
+    margin-top: 20px;
+    padding-top: 20px;
+    height: 200px;
+    font-size: 24px;
+    background-color: black;
+    border: none;
+    border-bottom: white solid 1px;
+}
+
+.writeF div textarea:focus{
+    outline-color: #d5ca00;
+}
+
+.writeF div textarea::placeholder{
+    color: white;
+}
+
+.writeBtn{
+    border: 2px solid white;
+    width: 200px;
+    height: 50px;
+    color: black;
     background-color: white;
+    border-radius: 20px;
+    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    align-items:center;
+    margin-bottom: 20px;
+}
+
+.writeBtn:hover{
+    background-color: black;
+    color: white;
 }
 
 .backBtn{
-    border: 1px solid black;
+    border: 2px solid white;
+    width: 200px;
+    height: 50px;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
+
+.backBtn:hover{
+    background-color: black;
+    color: white;
+}
+
