@@ -250,10 +250,11 @@ a{
     padding-left: 400px;
     padding-top: 200px;
     border-top: 2px solid white;
+    display: flex;
 }
 
 .writeF form{
-    display: block;
+    
     flex-direction: row;
 }
 
@@ -269,9 +270,13 @@ a{
 }
 
 #writeForm{
-    color: white;
+
     font-size: 40px;
     margin-top: 20px;
+}
+
+#tbody{
+    color: white;
 }
 
 .writeF div{
