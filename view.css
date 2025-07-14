@@ -277,3 +277,20 @@ a{
 .writeF div{
     font-size: 24px;
 }
+
+#modify, #delete{
+    margin-top: 20px;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    width: 100px;
+}
+
+a{
+    border-radius: 20px;
+    border: 2px solid white;
+    color: white;
+    background-color: black;
+    width: 200px;
+}

@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
 }
 
 .uoqmunthenkhung-regular {
@@ -269,7 +269,7 @@ a{
 
 .text p{
     color: black;
-    font-size: 64px;
+    font-size: 56px;
     bottom: 0;  
     animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
@@ -284,7 +284,7 @@ a{
 }
 
 .scroll-image{
-    width: 400px;
+    width: 300px;
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in;
@@ -393,7 +393,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff1a; /* 희미한 텍스트 */
+    color: #ffffff;
     font-size: 8vw;
     font-weight: bold;
     user-select: none;
@@ -411,9 +411,9 @@ a{
 }
 
 .image-section img {
-    margin-top: 220px;
+    margin-top: 120px;
     position: absolute;
-    width: 50vw;
+    width: 30vw;
     height: 60vh;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -430,8 +430,8 @@ a{
     background-color: black;
     display: flex;
     flex-direction: column;
-    padding-left: 400px;
-    padding-top: 200px;
+    padding-left: 360px;
+    padding-top: 50px;
     border-top: 2px solid white;
 }
 
@@ -513,4 +513,126 @@ a{
     color: black;
 }
 
+@media all and (max-width:479px){
+    html, body{
+        margin: 0px;
+        overflow-x: hidden;
+    }
+
+    .main{
+        width: 100%;
+    }
+
+	.logo {
+        font-size: 20px;
+        margin: 0 0;
+    }
+
+    .data {
+        height: 800px;
+    }
+
+    .hello {
+        font-size: 20px;
+        text-align: unset;
+        padding-left: 40px;
+
+    }
+
+    .contain_menu{
+        width: 50px;
+    }
+
+    .contain_menu .under{
+        margin: 0 0;
+        right: 1000;
+        font-size: 20px;
+    }
+
+    .main{
+        background-image: url(image/image1.jpg);
+        background-size: 240px 500px;
+        background-repeat: no-repeat;
+    }
+
+    .contain_menu .under li{
+        margin-right: 0px;
+    }   
+
+    .ment{
+        width: 200px;
+    }
+
+    .text{
+        margin: 40px 0;
+        font-size: 2rem;
+        padding: 0px;
+
+    }
+
+    .text p {
+        font-size: 20px;
+    }
+
+    .anton {
+        font-family: UoqMunThenKhung;
+        position: relative;
+        color: white;
+        font-size: 0px;
+        padding-right: 40px;
+    }
+
+    #inc01 .big_txt .b_txt {
+        
+    }
+
+
+    .writeF{
+        padding-left: 0px;
+    }
+
+    .writeF p {
+        font-size: 12px;
+    }
+
+    .writeF h2{
+        color: white;
+        font-size: 28px;
+    }
+
+    #inc01 .big_txt {
+        font-size: 10px;
+        padding-left: 0px;
+    }
+
+    .image-section-wrapper{
+        text-align: unset;
+    }
+
+    .mical{
+        font-size: 16px;
+        padding-top: 0px;
+        padding-left: 20px;
+    }
+
+    .mical2{
+        font-size: 12px;
+        padding-top: 0px;
+        padding-left: 20px;
+
+    }
+
+    .image-section img {
+        margin-top: 20px;
+        position: absolute;
+        width: 40vw;
+        height: 40vh;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 16px;
+        z-index: 2;
+        top: 0;
+        left: 12;
+    }
+}
 

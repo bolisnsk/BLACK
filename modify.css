@@ -225,62 +225,31 @@ a{
     }
 }
 
-.data .click_button{
-    margin-top: 600px;
-}
-
-.click_button a:hover > span{
-    color: var(--yellow--color);
-}
-
-.aa:hover{
-    color: var(--yellow--color);
-    box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;
-}
-
-.data .click_button .down{
-    color: var(--white-color);
-    font-size: 26px;
-}
-
 .writeF{
     height: 100vh;
     background-color: black;
-    color: white;
-    padding-left: 400px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
     padding-top: 200px;
-    border-top: 2px solid white;
 }
 
 .writeF h2{
-    color: white;
-    font-size: 48px;
-}
-
-.writeF p {
-    color: white;
-    padding-top: 20px;
     font-size: 24px;
-}
-
-#writeForm{
-    font-size: 40px;
-    margin-top: 20px;
-}
-
-#tbody{
     color: white;
 }
 
-.writeF div{
-    font-size: 24px;
-}
-
-.writeF a{
+#modifyForm div {
     color : white;
 }
 
-td {
-    width: 100px;
-    text-align: center;
+.writeF div textarea{
+    width: 50%;
+    margin-top: 20px;
+    padding-top: 20px;
+    height: 200px;
+    font-size: 24px;
+    background-color: black;
+    border: none;
+    border-bottom: white solid 1px;
 }

@@ -75,7 +75,7 @@ window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   const imageBox = document.getElementById('scrollImage');
 
-  if (scrollY > 1500) {
+  if (scrollY > 1000) {
     imageBox.classList.add('visible');
   } else {
     imageBox.classList.remove('visible');

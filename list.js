@@ -46,13 +46,13 @@ const boardsObj = JSON.parse(boardsStr);
 
 const template = (index, objValue) => {
   return `
-  <div>
-    <div>${index + 1}</div>
-    <div><a href = "./view.html?index=${objValue.index}">${objValue.subject}</a></div>
-    <div>${objValue.writer}</div>
-    <div>${objValue.date}</div>
-    <div>${objValue.views}</div>
-  </div>
+  <tr>
+    <td>${index + 1}</td>
+    <td><a href = "./view.html?index=${objValue.index}">${objValue.subject}</a></td>
+    <td>${objValue.writer}</td>
+    <td>${objValue.date}</td>
+    <td>${objValue.views}</td>
+  </tr>
   `;
 };
 
