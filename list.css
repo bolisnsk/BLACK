@@ -284,3 +284,90 @@ td {
     width: 100px;
     text-align: center;
 }
+
+.boardToolbar{
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    margin-bottom: 16px; 
+}
+
+.searchBox{ 
+    display: flex; 
+    gap: 8px; 
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+.searchBox input{
+    flex: 1;
+    min-width: 180px;
+    padding: 10px 12px; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.searchBox button{ 
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.searchBox button.ghost{
+    background: transparent;
+}
+
+.resultMeta{ 
+    font-size: 14px; 
+    opacity: .7; 
+    margin: 0; 
+}
+
+.boardList{ 
+    list-style: none;
+    padding: 0; 
+    margin: 0; 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px; 
+}
+
+.boardItem{
+    border: 1px solid #eee; 
+    border-radius: 14px; 
+    padding: 14px; 
+}
+
+.boardItem .title{ 
+    font-weight: 700;
+    margin: 0 0 8px; 
+}
+
+.boardItem .meta{ 
+    font-size: 12px; 
+    opacity: .7; 
+    margin: 0;
+}
+
+.emptyState{ 
+    border: 1px dashed #ddd; 
+    border-radius: 14px; 
+    padding: 24px; 
+    text-align: center; 
+}
+
+.emptyTitle{ 
+    font-weight: 700; 
+    margin: 0 0 6px; 
+}
+
+.emptyDesc{ 
+    margin: 0; 
+    opacity: .7;
+}
+
+@media (max-width: 768px) {
+    .boardList{
+        grid-template-columns:1fr;
+    }
+}
