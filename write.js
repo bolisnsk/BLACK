@@ -1,29 +1,25 @@
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
-    document.querySelector('header').classList.add('visible');
+    document.querySelector('header')?.classList.add('visible');
   }, 1000);
 });
 
 window.onload = () => {
-  let x = 0,
-      y = 0;
-  let targetX = 0,
-      targetY = 0;
+  let x = 0, y = 0;
+  let targetX = 0, targetY = 0;
   const speed = 0.09;
+
   const cursorItem = document.querySelector(".cursorItem");
-  const circle = cursorItem.querySelector(".cursor");
+  const circle = cursorItem?.querySelector(".cursor");
 
   const buttonAll = document.querySelectorAll("a");
+  if (circle) {
+    buttonAll.forEach((item) => {
+      item.addEventListener("mouseenter", () => circle.style.transform = "scale(.3)");
+      item.addEventListener("mouseleave", () => circle.style.transform = "scale(1)");
+    });
+  }
 
-  buttonAll.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      circle.style.transform = "scale(.3)";
-    });
-    item.addEventListener("mouseleave", () => {
-      circle.style.transform = "scale(1)";
-    });
-  });
-  
   window.addEventListener("mousemove", (e) => {
     x = e.pageX;
     y = e.pageY;
@@ -32,77 +28,78 @@ window.onload = () => {
   const loop = () => {
     targetX += (x - targetX) * speed;
     targetY += (y - targetY) * speed;
-
-    cursorItem.style.transform = `translate(${targetX}px, ${targetY}px)`;
-
+    if (cursorItem) cursorItem.style.transform = `translate(${targetX}px, ${targetY}px)`;
     window.requestAnimationFrame(loop);
   };
-  loop();  
+  loop();
 };
 
 const writeForm = document.querySelector("#writeForm");
 
 class Board {
-    constructor(indexNum, subjecStr, writerStr, contentStr){
-        this.index = indexNum;
-        this.Subject = subjecStr;
-        this.Writer = writerStr;
-        this.Content = contentStr;
-        this.date = recordDate();
-        this.views = -1;
-        this.fefresh = false;
-    }
+  constructor(indexNum, subjecStr, writerStr, contentStr) {
+    this.index = indexNum;
+    this.Subject = subjecStr;
+    this.Writer = writerStr;
+    this.Content = contentStr;
+    this.date = recordDate();
+    this.views = 0;       // ✅ -1 말고 0부터 시작
+    this.refresh = false; // ✅ 오타(fefresh) 정리
+  }
 
-    set Subject(value) {
-        if (value.length === 0) throw new Error("제목을 입력해주세요.");
-        this.subject = value;
-    }
+  set Subject(value) {
+    const v = value.trim();                // ✅ 공백만 입력 방지
+    if (v.length === 0) throw new Error("제목을 입력해주세요.");
+    if (v.length > 30) throw new Error("제목은 30자 이내로 입력해주세요.");
+    this.subject = v;
+  }
 
-    set Writer(value) {
-        if (value.length === 0) throw new Error("작성자를 입력해주세요.");
-        this.writer = value;
-    }
+  set Writer(value) {
+    const v = value.trim();
+    if (v.length === 0) throw new Error("작성자를 입력해주세요.");
+    if (v.length > 10) throw new Error("작성자는 10자 이내로 입력해주세요.");
+    this.writer = v;
+  }
 
-    set Content(value) {
-        if (value.length === 0) throw new Error("내용을 입력해주세요.");
-        this.content = value;
-    }
+  set Content(value) {
+    const v = value.trim();
+    if (v.length === 0) throw new Error("내용을 입력해주세요.");
+    if (v.length > 500) throw new Error("내용은 500자 이내로 입력해주세요.");
+    this.content = v;
+  }
 }
 
 const recordDate = () => {
-    const date = new Date();
-    const yyyy = date.getFullYear();
-    let mm = date.getMonth() + 1;
-    let dd = date.getDate();
+  const date = new Date();
+  const yyyy = date.getFullYear();
+  let mm = date.getMonth() + 1;
+  let dd = date.getDate();
 
-    mm = (mm > 9 ? "" : 0) + mm;
-    dd = (dd > 0 ? "" : 0) + dd;
+  mm = (mm > 9 ? "" : "0") + mm;
+  dd = (dd > 9 ? "" : "0") + dd; // ✅ dd > 0 버그 수정
 
-    const arr = [yyyy, mm, dd];
-
-    return arr.join("-");
+  return [yyyy, mm, dd].join("-");
 };
 
 const submitHandler = (e) => {
-    e.preventDefault();
-    const subject = e.target.subject.value;
-    const writer = e.target.writer.value;
-    const content = e.target.content.value;
+  e.preventDefault();
+  const subject = e.target.subject.value;
+  const writer = e.target.writer.value;
+  const content = e.target.content.value;
 
-    try {
-        const boardsObj = JSON.parse(localStorage.getItem("boards")) || [];
+  try {
+    const boardsObj = JSON.parse(localStorage.getItem("boards")) || [];
+    const index = Date.now(); // ✅ 삭제/수정 있어도 고유값 유지
+    const instance = new Board(index, subject, writer, content);
+    boardsObj.push(instance);
 
-        const index = boardsObj.length;
-        const instance = new Board(index, subject, writer, content);
-        boardsObj.push(instance);
-
-        const boardsStr = JSON.stringify(boardsObj);
-        localStorage.setItem("boards", boardsStr);
-        location.href = "./view.html?index=" + index;
-    } catch (e) {
-        alert(e.message);
-        console.error(e);
-    }
+    localStorage.setItem("boards", JSON.stringify(boardsObj));
+    location.href = "./view.html?index=" + index; // ✅ 고유 index로 이동
+  } catch (e) {
+    alert(e.message);
+    console.error(e);
+  }
 };
 
-writeForm.addEventListener("submit", submitHandler);
+if (writeForm)
+  writeForm.addEventListener("submit", submitHandler);
