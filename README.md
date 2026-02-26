@@ -5,12 +5,12 @@
 ##  Link
 👉 https://your-vercel-link.vercel.app
 
-🧩 프로젝트 소개
+##  🧩 프로젝트 소개
 
 Team Anton은 브라우저 LocalStorage를 활용해
 게시글 작성(Create), 조회(Read), 수정(Update), 삭제(Delete) 기능을 구현한 게시판 프로젝트입니다.
 
-🛠 사용 기술
+##  🛠 사용 기술
 
 HTML5
 
@@ -26,7 +26,7 @@ GSAP (일부 인터랙션)
 
 단순 기능 구현을 넘어: 유효성 검사, 검색 기능, 조회수 증가 로직, 데이터 구조 설계, 인터랙션 UX 까지 고려하여 제작
 
-🚀 주요 기능
+##  🚀 주요 기능
 1️⃣ 게시글 작성 (Create)
 
 제목 / 작성자 / 내용 입력
