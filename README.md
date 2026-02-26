@@ -31,7 +31,7 @@ LocalStorage
 <img width="1916" height="934" alt="image" src="https://github.com/user-attachments/assets/b1158f2b-d697-408e-a7c7-873976890e63" />
 화면 수정 예정.
 
-### 4. 글 수정 화면
+### 4. 수정 화면
 <img width="1918" height="942" alt="image" src="https://github.com/user-attachments/assets/61871ed1-13a9-40cc-a7c3-bdcc2b9b06a6" />
 
 ##  🚀 주요 기능
