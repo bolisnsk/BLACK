@@ -10,10 +10,20 @@
 Team Anton은 브라우저 LocalStorage를 활용해
 게시글 작성(Create), 조회(Read), 수정(Update), 삭제(Delete) 기능을 구현한 게시판 프로젝트입니다.
 
-##  🛠 사용 기술
+##  🛠 사용 기술 및 도구
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![GSAP](https://img.shields.io/badge/GSAP-%2388CE02.svg?style=for-the-badge&logo=greensock&logoColor=black)  ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white) <br/>   ScrollTrigger
 
 LocalStorage
+
+## 👨🏻‍💻 실행 화면
+### 1. 메인화면
+<img width="1916" height="938" alt="image" src="https://github.com/user-attachments/assets/8b270853-f608-4d4c-a507-3f969ac800ad" />
+<img width="1913" height="930" alt="image" src="https://github.com/user-attachments/assets/31284b7d-1718-4c5e-83cb-b16268c09188" />
+<img width="1915" height="934" alt="image" src="https://github.com/user-attachments/assets/6b0a3f2d-231c-47b9-8341-560f95433373" />
+<img width="1914" height="940" alt="image" src="https://github.com/user-attachments/assets/9fa31d50-fa5b-46ce-a75f-b592cde03ca6" />
+<img width="1914" height="942" alt="image" src="https://github.com/user-attachments/assets/4458b70b-1dc6-4296-ad47-e5e038074f63" />
+<img width="1917" height="942" alt="image" src="https://github.com/user-attachments/assets/481893d2-6f33-444c-96c3-f289053ca368" />
+
 
 ##  🚀 주요 기능
 1️⃣ 게시글 작성 (Create)
