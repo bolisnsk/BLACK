@@ -23,7 +23,16 @@ LocalStorage
 <img width="1914" height="940" alt="image" src="https://github.com/user-attachments/assets/9fa31d50-fa5b-46ce-a75f-b592cde03ca6" />
 <img width="1914" height="942" alt="image" src="https://github.com/user-attachments/assets/4458b70b-1dc6-4296-ad47-e5e038074f63" />
 <img width="1917" height="942" alt="image" src="https://github.com/user-attachments/assets/481893d2-6f33-444c-96c3-f289053ca368" />
-
+<br/>  
+### 2. 글쓰기 화면
+<img width="1916" height="940" alt="image" src="https://github.com/user-attachments/assets/69cfb5ae-3499-4250-b96e-9c92705b5e97" />
+<br/>
+### 3. 리스트 화면
+<img width="1916" height="934" alt="image" src="https://github.com/user-attachments/assets/b1158f2b-d697-408e-a7c7-873976890e63" />
+화면 수정 예정.
+<br/>  
+### 4. 글 수정 화면
+<img width="1918" height="942" alt="image" src="https://github.com/user-attachments/assets/61871ed1-13a9-40cc-a7c3-bdcc2b9b06a6" />
 
 ##  🚀 주요 기능
 1️⃣ 게시글 작성 (Create)
